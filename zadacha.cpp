@@ -23,7 +23,6 @@ int main()
 		for (int j = 0; j < col; j++)
 			cin >> result[i][j];						   
 	}
-
 	word_one.WriteIn(row, col, result);
 	cout << "Результат:" << endl;
 	word_one.show();
