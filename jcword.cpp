@@ -14,17 +14,18 @@ Jcword::Jcword(int row, int col, bool **cword)
 
 Jcword::~Jcword()
 {
-	for (int i = 0; i < row; i++)
-		delete[] crossword[i];
-	delete[] crossword;
+for (int i = 0; i < row; i++)
+delete[] crossword[i];
+delete[] crossword;
+delete r_row;
+delete r_col;
 }
 
 bool Jcword::WriteIn(int r_size, int c_size, bool **cword)
 {
 	if (r_size != row || c_size != col)
 	{
-		std::cerr << "Размеры создаваемого кроссворда не соответствуют размерам массива с информацией о его содержимом." << std::endl;
-		return false;
+				return false;
 	}
 	else
 	{
@@ -102,8 +103,6 @@ bool Jcword::show()
 
 void Jcword::Calculate()
 {
-	char s[15];
-	// считем по столбцам
 	int counter = 0;
 	bool flag = false;
 	for (int i = 0; i < col; i++)
