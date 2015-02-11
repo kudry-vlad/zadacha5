@@ -1,18 +1,3 @@
-Compiling...
-11a.cpp
-d:\1081_4\kudry-vlad\11a.cpp(51) : warning C4018: '<' : signed/unsigned mismatch
-d:\1081_4\kudry-vlad\11a.cpp(73) : warning C4018: '<' : signed/unsigned mismatch
-Linking...
-Embedding manifest...
-Build log was saved at "file://d:\1081_4\kudry-vlad\Debug\BuildLog.htm"
-kudry-vlad - 0 error(s), 2 warning(s)
-========== Rebuild All: 1 succeeded, 0 failed, 0 skipped ==========
-
-
-
-
-
-
 #include <stdio.h>
 #include <tchar.h>
 
@@ -32,14 +17,11 @@ vector<int> result;
 //	Отсеивающая повторяющие числа
 void addResult(int num)
 {
-	if (result.size())
+	for (vector<int>::iterator cur = result.begin(); cur < result.end(); cur++)
 	{
-		for (vector<int>::iterator cur = result.begin(); cur < result.end(); cur++)
+		if (*cur == num)
 		{
-			if (*cur == num)
-			{
-				return;
-			}
+			return;
 		}
 	}
 	result.push_back(num);
